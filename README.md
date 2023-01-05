@@ -7,10 +7,10 @@ Your question is **how to scale image in button when it's too big** and one way 
         public MainForm()
         {
             InitializeComponent();
-            initButton(this);
+            initButton();
         }
 
-        private void initButton(MainForm mainForm)
+        private void initButton()
         {
             string path = Path.Combine(
                 AppDomain.CurrentDomain.BaseDirectory,
