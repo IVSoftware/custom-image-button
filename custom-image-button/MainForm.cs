@@ -5,10 +5,10 @@ namespace custom_image_button
         public MainForm()
         {
             InitializeComponent();
-            initButton(this);
+            initButton();
         }
 
-        private void initButton(MainForm mainForm)
+        private void initButton()
         {
             string path = Path.Combine(
                 AppDomain.CurrentDomain.BaseDirectory,
