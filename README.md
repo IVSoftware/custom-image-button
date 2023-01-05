@@ -1,0 +1,40 @@
+Your question is **how to scale image in button when it's too big** and one way to do this with a standard Winforms `Button` is to use the `Bitmap(Image original, Size newSize)` constructor to scale the image to the size you want (based on the size of the button). Then you can assign it to the `Button.Image` property and set the positions of Image and Text:
+
+[![smile][1]][1]
+
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+            initButton(this);
+        }
+
+        private void initButton(MainForm mainForm)
+        {
+            string path = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "Images",
+                "smiley.png");
+            int square = buttonWithImage.Height - 4;
+            Image resizedImage = 
+                new Bitmap(
+                    Bitmap.FromFile(path),
+                    new Size(square, square));
+
+            buttonWithImage.Image = resizedImage;
+            buttonWithImage.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonWithImage.TextAlign = ContentAlignment.MiddleRight;
+        }
+    }
+
+
+
+***
+Make sure that the image file can be located.
+
+[![copy-if-newer][2]][2]
+
+
+  [1]: https://i.stack.imgur.com/MDnpe.png
+  [2]: https://i.stack.imgur.com/5dBsw.png
