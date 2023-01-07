@@ -13,7 +13,7 @@ namespace custom_image_button
             string path = Path.Combine(
                 AppDomain.CurrentDomain.BaseDirectory,
                 "Images",
-                "smiley.png");
+                "folder.png");
             int square = buttonWithImage.Height - 4;
             Image resizedImage = 
                 new Bitmap(
